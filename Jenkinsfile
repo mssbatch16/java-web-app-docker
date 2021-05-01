@@ -5,9 +5,9 @@ node{
     }
     
     stage(" Maven Clean Package"){
-      def mavenHome =  tool name: "Maven-3.8.1", type: "maven"
-      sh "mvn clean package"
-      
+         withMaven(jdk: 'javapath', maven: 'maven') {
+         sh "mvn clean package"
+        }
     } 
     
     
