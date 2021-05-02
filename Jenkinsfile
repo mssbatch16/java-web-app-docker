@@ -12,12 +12,12 @@ node{
     
     
     stage('Build Docker Image'){
-        sh 'docker build -t mytag .'
+        sh 'docker build -t yadalahemanth/mytag .'
     }
     
     stage('Push Docker Image'){
        withDockerRegistry([credentialsId: 'faa6d20a-5bc6-4b5e-835e-7e5116e9b1fc']) {
-           sh 'docker push mytag:latest'
+           sh 'docker push yadalahemanth/mytag:latest'
         }
        
      }
