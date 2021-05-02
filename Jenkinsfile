@@ -12,7 +12,7 @@ node{
     
     
     stage('Build Docker Image'){
-        sh 'docker build --file  -f java-web-app-docker/Dockerfile '
+        sh 'docker build   -f . '
     }
     
     stage('Push Docker Image'){
