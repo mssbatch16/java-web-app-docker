@@ -16,10 +16,10 @@ node{
     }
     
     stage('Push Docker Image'){
-        withCredentials([string(credentialsId: 'Docker_Hub_Pwd', variable: 'Docker_Hub_Pwd')]) {
-          sh "docker login -u yadalahemanth -p hemanth@1244"
+       withDockerRegistry([credentialsId: 'faa6d20a-5bc6-4b5e-835e-7e5116e9b1fc', url: 'https://hub.docker.com/u/yadalahemanth']) {
+           sh 'docker push brightbox/mytag:latest'
         }
-        sh 'docker push yadalahemanth/java-web-app'
+       
      }
      
       stage('Run Docker Image In Dev Server'){
