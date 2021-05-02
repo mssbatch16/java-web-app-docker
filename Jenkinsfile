@@ -12,7 +12,7 @@ node{
     
     
     stage('Build Docker Image'){
-        sh 'docker build   -f . '
+        sh 'docker build -t mytag .'
     }
     
     stage('Push Docker Image'){
