@@ -17,7 +17,7 @@ node{
     
     stage('Push Docker Image'){
        withDockerRegistry([credentialsId: 'faa6d20a-5bc6-4b5e-835e-7e5116e9b1fc', url: 'https://hub.docker.com/u/yadalahemanth']) {
-           sh 'docker push brightbox/mytag:latest'
+           sh 'docker push yadalahemanth/mytag:latest'
         }
        
      }
